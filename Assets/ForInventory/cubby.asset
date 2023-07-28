@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e7173e02f4e5714ab009ffdcea85a35, type: 3}
+  m_Name: cubby
+  m_EditorClassIdentifier: 
+  itemName: cubby
+  itemImage: {fileID: 21300000, guid: 2051223f66c86734ebc43cf4f4e61ff5, type: 3}
+  amount: 0
+  gameObject: {fileID: 3659963136791431317, guid: fbe0a03f7437c1340a0b34c17c4b75ff, type: 3}
