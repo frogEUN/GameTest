@@ -19,6 +19,10 @@ public class Slot : MonoBehaviour, IPointerClickHandler
         {
             text.text = item.amount.ToString();
         }
+        else
+        {
+            text.text = null;
+        }
         /*if(theNumberOf != 0 && theNumberOf != 1)
         {
             text.text = "" + theNumberOf;

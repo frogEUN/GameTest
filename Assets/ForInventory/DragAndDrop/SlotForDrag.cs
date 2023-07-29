@@ -11,6 +11,7 @@ public class SlotForDrag : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
     public void OnBeginDrag(PointerEventData eventData)
     {
         startPos = this.transform.position;
+        GameData.droppedObejct = this.gameObject;
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -21,5 +22,6 @@ public class SlotForDrag : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
     public void OnEndDrag(PointerEventData eventData)
     {
         this.transform.position = startPos;
+        
     }
 }

@@ -6,4 +6,5 @@ public static class GameData
 {
     public static bool inventoryOpen = false;
     public static GameObject objectShowed;
+    public static GameObject droppedObejct;
 }
