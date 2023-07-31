@@ -18,17 +18,21 @@ public class ContentController : MonoBehaviour, IPointerEnterHandler, IPointerEx
     private void Start()
     {
         instance = this;
-        slots[0] = null;
+        slots[0] = null;  // slots[0]은 사용하지 않음. (편의를 위해서)
         content.SetActive(false);
     }
 
     private void Update()
     {
         this.gameObject.transform.position = Camera.main.WorldToScreenPoint(player.transform.position + new Vector3(20,-10,0));
+        // 미니창 위치 설정
     }
 
     public void AddItem(Item item)
     {
+        // 미니창 슬롯에 아이템을 추가하는 함수.
+        // 빈 슬롯을 찾아 해당 슬롯에 아이템 정보를 넣는다.
+
         content.SetActive(true);
 
         for (int i = 1; i < slots.Length; i++)
@@ -43,6 +47,8 @@ public class ContentController : MonoBehaviour, IPointerEnterHandler, IPointerEx
 
     public void DeleteItem(Item item)
     {
+        // 미니창 슬롯에서 아이템을 제거하는 함수.
+        // 주어진 아이템을 슬롯에서 찾아서 해당 아이템 정보를 삭제한다.
         
         for (int i = 1; i < slots.Length; i++)
         {
@@ -59,6 +65,9 @@ public class ContentController : MonoBehaviour, IPointerEnterHandler, IPointerEx
 
     private void CleanItem()
     {
+        // 미니창 슬롯 정리하는 함수.
+        // 슬롯에서 빈칸 다음에 아이템이 있으면 한칸 앞으로 옮긴다.
+
         Item currentItem;
         Item nextItem;
         for (int i = 1; i < slots.Length - 1; i++)
@@ -76,6 +85,9 @@ public class ContentController : MonoBehaviour, IPointerEnterHandler, IPointerEx
 
     private void SetContent()
     {
+        // 미니창을 계속 보여줄지 안보여줄지 설정하는 함수.
+        // 미니창 슬롯에 아무것도 없으면 미니창을 닫는다.
+
         if (slots[1].GetComponent<SlotController>().item == null)
         {
             content.SetActive(false);
@@ -84,12 +96,12 @@ public class ContentController : MonoBehaviour, IPointerEnterHandler, IPointerEx
     }
 
     public void OnPointerExit(PointerEventData eventData)
-    {
+    { // 미니창 슬롯 범위를 클릭했을 때 플레이어가 의도치 않게 움직이는 것을 막기 위함.
         NavData.playerCanMove = true;
     }
 
     public void OnPointerEnter(PointerEventData eventData)
-    {
+    { // 미니창 슬롯 범위를 클릭했을 때 플레이어가 의도치 않게 움직이는 것을 막기 위함.
         NavData.playerCanMove = false;
 
     }
