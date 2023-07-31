@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using static UnityEditor.Progress;
 
-public class ContentController : MonoBehaviour
+public class ContentController : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public GameObject[] slots = new GameObject[4];
 
@@ -80,5 +81,16 @@ public class ContentController : MonoBehaviour
             content.SetActive(false);
 
         }
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        NavData.playerCanMove = true;
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        NavData.playerCanMove = false;
+
     }
 }

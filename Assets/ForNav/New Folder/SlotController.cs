@@ -29,4 +29,11 @@ public class SlotController : MonoBehaviour
             itemName.text = item.itemName;
         }
     }
+
+
+    public void ButtonClick()
+    {
+        // æ∆¿Ã≈€ »πµÊ
+        Debug.Log(item.itemName + " »πµÊ");
+    }
 }
