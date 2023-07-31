@@ -17,7 +17,11 @@ public class Slot : MonoBehaviour, IPointerClickHandler
         // && item.amount > 1
         if (_item != null)
         {
-            text.text = item.amount.ToString();
+            if (item.amount >= 2)
+                text.text = item.amount.ToString();
+            else
+                text.text = null;
+            
         }
         else
         {
